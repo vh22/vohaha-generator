@@ -1,0 +1,30 @@
+{
+  "name": "generator-vohaha",
+  "version": "0.0.1",
+  "description": "Yeoman generator",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "vohaha/generator-vohaha",
+  "author": {
+    "name": "vh.22.88",
+    "email": "vohaha2011@gmail.com",
+    "url": "https://github.com/vohaha"
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yo": ">=1.0.0",
+    "gulp": ">=3.5.0",
+    "chalk": "~1.0.0",
+    "gulp-load-plugins": "~0.10.0",
+    "mkdirp": "^0.5.0",
+    "semver": "^4.3.2",
+    "underscore.string": "^3.0.3",
+    "yeoman-generator": "~0.19.2",
+    "yosay": "^1.0.3"
+  }
+}

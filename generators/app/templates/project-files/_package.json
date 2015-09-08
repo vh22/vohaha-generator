@@ -1,0 +1,26 @@
+{
+  "name": "<%= projectName %>",
+  "version": "0.0.1",
+  "devDependencies": {
+    "autoprefixer": "*",
+    "browser-sync": "*",
+    "browserify": "*",
+    "del": "*",
+    "gulp": "*",
+    "gulp-compass": "*",
+    "gulp-concat": "*",
+    "gulp-copy": "*",
+    "gulp-imagemin": "*",
+    "gulp-load-plugins": "*",
+    "gulp-minify-css": "*",
+    "gulp-plumber": "*",
+    "gulp-postcss": "*",
+    "gulp-rename": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "main-bower-files": "*",
+    "through2": "*",
+    "yargs": "*"
+  }
+}
