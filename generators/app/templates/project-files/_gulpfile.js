@@ -33,9 +33,9 @@ gulp.task('browser-sync', function () {
 
 
 // clear dist diretory
-gulp.task('clean', function (cb) {
-    return del('./dist', cb);
-});
+//gulp.task('clean', function (cb) {
+//    return del('./dist', cb);
+//});
 
 
 // collect css
@@ -54,16 +54,13 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('dist/assets/css'));
 });
 
-// collect vendor scripts
-gulp.task('vendor', function () {
-    return gulp.src(mainBowerFiles())
-        .pipe(uglify())
-        .pipe(gulp.dest('./dist/vendor'));
-});
 
-gulp.task('modernizr', function () {
-    return gulp.src('./src/vendor/modernizr/*.js')
-        .pipe(gulp.dest('./dist/vendor/'));
+// collect vendor css
+gulp.task('vendor', function () {
+
+    return gulp.src('./src/vendor/**/*.{map,min.map,min.css,min.js,eot,svg,ttf,woff,woff2,scss}')
+        .pipe(plumber())
+        .pipe(gulp.dest('./dist/vendor'));
 });
 
 // make browserify bundle
@@ -110,11 +107,11 @@ gulp.task('templates', function () {
 
 
 
-gulp.task('build', ['styles', 'vendor', 'modernizr', 'js', 'templates', 'images', 'clean']);
+gulp.task('build', ['styles', 'vendor', 'js', 'templates', 'images']);
 
 gulp.task('serve', ['build', 'browser-sync'], function () {
     gulp.watch('src/master/sass/**/*', ['styles', reload]);
-    gulp.watch('src/assets/js/**/*.js', ['js', reload]);
+    gulp.watch('src/assets/js/**/*', ['js', reload]);
     gulp.watch('src/vendor/**/*', ['vendor', reload]);
     gulp.watch('src/assets/images/**/*', ['images', reload]);
     gulp.watch('src/*.html', ['templates', reload]);
